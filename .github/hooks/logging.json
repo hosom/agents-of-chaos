@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py sessionStart",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py sessionStart",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py userPromptSubmitted",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py userPromptSubmitted",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py postToolUse",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py postToolUse",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUseFailure": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py postToolUseFailure",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py postToolUseFailure",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "agentStop": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py agentStop",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py agentStop",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "subagentStart": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py subagentStart",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py subagentStart",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "subagentStop": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py subagentStop",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py subagentStop",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "errorOccurred": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py errorOccurred",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py errorOccurred",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": ".venv/bin/python hooks/logging/log_tool_call.py sessionEnd",
+        "powershell": ".venv/Scripts/python.exe hooks/logging/log_tool_call.py sessionEnd",
+        "cwd": ".",
+        "timeoutSec": 120
+      }
+    ]
+  }
+}

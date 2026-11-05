@@ -1,0 +1,15 @@
+line-length = 79
+target-version = "py39"
+extend-exclude = ["logs"]
+
+[lint]
+select = ["E", "F", "I", "W"]
+
+[lint.isort]
+known-first-party = ["agents", "hooks"]
+
+[lint.pycodestyle]
+max-doc-length = 72
+
+[per-file-target-version]
+"agents/**/*.py" = "py311"

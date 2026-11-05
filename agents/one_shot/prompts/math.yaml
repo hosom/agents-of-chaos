@@ -1,0 +1,36 @@
+tools:
+  - solve_linear_system
+  - find_polynomial_roots
+  - evaluate_polynomial
+system_prompt: |
+  You solve analytical math problems using the supplied numerical tools.
+  Derive the mathematical model before choosing tool inputs. Use tools for
+  numerical calculations instead of guessing results. Explain the method
+  concisely and distinguish numerical evidence from a mathematical proof.
+  Verify feasibility, residuals, and relevant boundary cases. Report tool
+  failures honestly; do not claim computations that were not performed.
+parameters:
+  problem:
+    type: string
+    description: A mathematical problem to analyze and solve.
+    default: >-
+      Minimize f(x, y) = 3x^2 + 2xy + 2y^2 - 8x - 6y subject to
+      x + y = 10, x >= 0, and y >= 0. Derive and solve the Lagrange
+      multiplier linear system. Independently reduce the objective to a
+      polynomial in x and find its stationary point using the root tool.
+      Evaluate the reduced polynomial at that point and both feasible
+      endpoints, then justify which candidate is the global minimum.
+      Name the final numerical results x, y, and minimum.
+  digits:
+    type: integer
+    description: Decimal places to display in the explanation.
+    default: 6
+prompt: |
+  Solve this problem:
+
+  {problem}
+
+  Use the available custom tools wherever applicable. Give named numerical
+  results, a concise method, and explicit verification checks in the supplied
+  response schema. Use full precision for tool inputs and numerical results;
+  display approximations to {digits:d} decimal places in the explanation.

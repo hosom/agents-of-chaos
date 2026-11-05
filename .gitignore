@@ -1,0 +1,6 @@
+/logs/
+__pycache__/
+.venv/
+.ruff_cache/
+*.gif
+*.cast
